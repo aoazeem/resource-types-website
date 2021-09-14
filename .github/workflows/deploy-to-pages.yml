@@ -1,12 +1,21 @@
 name: Build Test Deploy
-on: workflow_dispatch
+on:
   #push:
     #branches:
       #- master
   #schedule:
     #- cron:  '* * * * *'
     #just testing
-
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Person to greet'
+        required: true
+        default: 'Mona the Octocat'
+      home:
+        description: 'location'
+        required: false
+        default: 'The Octoverse'
   
   
 jobs: 
