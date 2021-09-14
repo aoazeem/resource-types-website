@@ -50,9 +50,9 @@ jobs:
           
   
   build-test-deploy:
-    needs: [check-for-commits]
+    needs: [check-for-commits, check_local_repo_id]
     runs-on: ubuntu-latest
-    if: needs.check-for-coommits.outputs.var-check != needs.check-for-coommits.outputs.concourse-resource-ver
+    if: needs.check-for-coommits.outputs.var-check != needs.check-for-coommits.outputs.concourse-resource-ver && needs.check_local_repo_id.outputs.known_local_ver != needs.check_local_repo_id.outputs.true_local_ver
     steps:
       - name: checkout
         uses: actions/checkout@v2.3.4
