@@ -1,11 +1,11 @@
 name: Build Test Deploy
 on:
-  push:
-    branches:
-      - master
-  schedule:
-    - cron:  '* * * * *'
-  #workflow_dispatch:
+  #push:
+    #branches:
+      #- master
+  #schedule:
+    #- cron:  '* * * * *'
+  workflow_dispatch:
   
   
 jobs: 
